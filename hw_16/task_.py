@@ -32,17 +32,31 @@ for page in range(1, 51):
 #
 #
 # print(len(data))
-with open('data.json', 'w') as json_file:
-    json.dump(data, json_file)
-with open('data.json', 'r') as json_file:
-    loaded_list = json.load(json_file)
-    print(loaded_list)
+def save_to_json():
+    with open('data.json', 'w') as json_file:
+        json.dump(data, json_file)
+
+
+def read_from_json():
+    with open('data.json', 'r') as json_file:
+        loaded_list = json.load(json_file)
+
+    return loaded_list
+
+
+print(read_from_json())
 
 
 class Account:
-    def __init__(self):
-        pass
+    def __init__(self, title, img, link, rating, price, stock):
+        self.title = title
+        self.img = img
+        self.link = link
+        self.rating = rating
+        self.price = price
+        self.stock = stock
 
     def info(self):
         pass
-    
+
+
